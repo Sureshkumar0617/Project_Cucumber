@@ -1,0 +1,4 @@
+$(document).ready(function() {
+CucumberHTML.timelineItems.pushArray([{"id":"c79b2b60-0347-47b1-b824-ca3c4eede1e7","feature":"Login Page Feature","scenario":"Customer login to the app and change the country","start":1663179677186,"group":18,"content":"","tags":"","end":1663179686613,"className":"failed"},{"id":"30d9db31-4df9-448d-8b64-9a413fc22e8d","feature":"Search product and select and add to cart with other functionalities","scenario":"Adding product to the cart","start":1663179677189,"group":17,"content":"","tags":"","end":1663179684511,"className":"failed"}]);
+CucumberHTML.timelineGroups.pushArray([{"id":17,"content":"Thread[TestNG-PoolService-0,5,main]"},{"id":18,"content":"Thread[TestNG-PoolService-1,5,main]"}]);
+});
