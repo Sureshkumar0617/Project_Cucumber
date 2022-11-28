@@ -81,13 +81,11 @@ public class RWC001 {
 		System.setProperty("file.path.can",path);
 		log = LogManager.getLogger(test);
 		log.info("Opened Browser");
-		
 		config.initprop();
 		excelutil = new ReadExcelUtil(config.readRwcExcel());
 		excelutilWrite=new WriteExcelUtil();
 		
-		
-		
+				
 		DriverFactory.getDriver().get(config.readLoginURL());
 		CommonStep.scenario.log("Launch the application using URL and login with valid credentials");
 		log.info("****************************** Login to the application  *****************************************");

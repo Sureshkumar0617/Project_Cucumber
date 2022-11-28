@@ -19,9 +19,8 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class WriteExcelUtil {
 	private Map<String, Integer> columns =null;
+	private static Logger log ;
 	public  void setCellData(String filepath,String sheetname, String columnName, int rownum,String value) throws IOException {
-	
-		
 		FileInputStream fis = null;
 		 
 		Cell cellC=null;;
@@ -97,6 +96,7 @@ public class WriteExcelUtil {
 			workbook.write(out); 
 		}
 		catch (Exception e) {
+			log.error("Error in WriteExcelUtil"+e);
 		}
 
 		finally {

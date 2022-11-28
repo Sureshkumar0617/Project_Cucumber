@@ -74,6 +74,7 @@ public class ElementUtil {
 	public static WebDriver driver=DriverFactory.getDriver();
 	public static WebDriverWait wait;
 	public static String mainWindow;
+	private static Logger log ;
 
 	public static ElementUtil getInstance(){
 		if(elementUtil==null){
@@ -82,7 +83,6 @@ public class ElementUtil {
 		return elementUtil;
 }
 public static int getPageCount(PDDocument doc) {
-	
 	//get the total number of pages in the pdf document
 	int pageCount = doc.getNumberOfPages();
 	return pageCount;
@@ -92,6 +92,7 @@ public  void sleepTime(long milliseconds) {
 	try {
 		Thread.sleep(milliseconds);
 	} catch (InterruptedException e) {
+		log.error("Error in ElementUtil"+e);
 	}
 }
 public String getTitle() {
@@ -116,6 +117,7 @@ public static Boolean isElementEnabled(WebElement ele) {
 			jsonObject = (JSONObject)obj;
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
+			log.error("Error in ElementUtil"+e);
 		}
 		return jsonObject;
 	}
@@ -375,6 +377,7 @@ public static Boolean isElementEnabled(WebElement ele) {
 				break;
 			}
 			catch (StaleElementReferenceException e) {
+				log.error("Error in ElementUtil"+e);
 			}
 			attempts++;
 		}
@@ -389,6 +392,7 @@ public static Boolean isElementEnabled(WebElement ele) {
 		try {
 			driver.navigate().refresh();
 		} catch (Exception e) {
+			log.error("Error in ElementUtil"+e);
 			throw e;
 		}
 	}
@@ -661,6 +665,7 @@ public static Boolean isElementEnabled(WebElement ele) {
 			robot.keyRelease(KeyEvent.VK_ENTER);
 			sleepTime(500);
 		} catch (Exception e) {
+			log.error("Error in ElementUtil"+e);
 			throw e;
 		}
 	}
@@ -778,6 +783,7 @@ public static Boolean isElementEnabled(WebElement ele) {
 		}
 		catch (AWTException e)
 		{
+			log.error("Error in ElementUtil"+e);
 		}
 
 	}
@@ -803,6 +809,7 @@ public static Boolean isElementEnabled(WebElement ele) {
 		}
 		catch (AWTException e)
 		{
+			log.error("Error in ElementUtil"+e);
 		}
 
 	}

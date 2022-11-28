@@ -7,6 +7,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -26,18 +28,18 @@ public class ApplicationHooks {
 	private WebDriver driver;
 	Properties prop;
 	private ConfigReader config =new ConfigReader();
+	private static Logger log ;
 	public static Scenario scenario;
 
 	@Before
 	public void launchBrowser(Scenario scenario) throws IOException {
-		
-		
 		driverFactory = new DriverFactory();
 		config.initprop();
 		try {
 			driver = driverFactory.initdriver(config.readBrowser());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			log.error("Error in init_prop"+e);
 		}
 
 

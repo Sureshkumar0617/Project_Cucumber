@@ -12,8 +12,7 @@ import org.apache.logging.log4j.Logger;
 public class ConfigReader {
 
 	
-	
-	
+	private Logger log;
 	public static String URL;
 	public  Properties prop;
 	HashMap<String,String> hs= new HashMap<String,String>();
@@ -23,15 +22,18 @@ public class ConfigReader {
 	
 	public  Properties initprop() throws IOException {
 		
+
 		
-		
+
 		prop = new Properties();
 		FileInputStream ip = null ;
 		try {
 			ip	= new FileInputStream(fileName);
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
+			log.error("Error in init_prop"+e);
 		} catch (IOException e) {
+			log.error("Error in init_prop"+e);
 		}
 		finally {
 			ip.close();
@@ -50,6 +52,7 @@ public class ConfigReader {
 			return prop.getProperty("browser");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -59,6 +62,7 @@ public class ConfigReader {
 			return prop.getProperty("loginURL");         
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -68,6 +72,7 @@ public class ConfigReader {
 			return prop.getProperty("userid");         
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -76,6 +81,7 @@ public class ConfigReader {
 			return prop.getProperty("pswrd");         
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -84,6 +90,7 @@ public class ConfigReader {
 			return prop.getProperty("testSuiteDirectory");         
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -93,6 +100,7 @@ public class ConfigReader {
 			return prop.getProperty("LoginEmpId");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -102,6 +110,7 @@ public class ConfigReader {
 			return prop.getProperty("AmendVehicleCondition");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -111,6 +120,7 @@ public class ConfigReader {
 			return prop.getProperty("DeleteVehicleCondition");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -120,6 +130,7 @@ public class ConfigReader {
 			return prop.getProperty("ApplicationName");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -129,6 +140,7 @@ public class ConfigReader {
 			return prop.getProperty("ApplicationName");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -138,6 +150,7 @@ public class ConfigReader {
 			return prop.getProperty("OS");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -148,6 +161,7 @@ public class ConfigReader {
 			return prop.getProperty("Environment");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -158,6 +172,7 @@ public class ConfigReader {
 			return prop.getProperty("writeRWCExcel");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -168,6 +183,7 @@ public class ConfigReader {
 			return prop.getProperty("writeRINExcel");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -177,6 +193,7 @@ public class ConfigReader {
 			return prop.getProperty("RWCexcel");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -187,6 +204,7 @@ public class ConfigReader {
 			return prop.getProperty("RINexcel");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -197,6 +215,7 @@ public class ConfigReader {
 			return prop.getProperty("LoginInternalUser");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -207,6 +226,7 @@ public class ConfigReader {
 			return prop.getProperty("LoginServiceProvider1");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -216,6 +236,7 @@ public class ConfigReader {
 			return prop.getProperty("LoginServiceProvider2");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -225,6 +246,7 @@ public class ConfigReader {
 			return prop.getProperty("LoginExternaluser1");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -234,6 +256,7 @@ public class ConfigReader {
 			return prop.getProperty("LoginExternaluser2");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -243,6 +266,7 @@ public class ConfigReader {
 			return prop.getProperty("ScreenshotPass");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
@@ -252,6 +276,7 @@ public class ConfigReader {
 			return prop.getProperty("DownloadFolder");
 		}
 		catch (Exception e){
+			log.error("Error in init_prop"+e);
 			throw e;
 		}
 	}
